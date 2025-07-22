@@ -2,8 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.google.ksp)
-
+   // alias(libs.plugins.google.devtools.ksp)
 
 
 }
@@ -45,8 +44,7 @@ android {
 val koin_android_version = "3.4.0"
 val koin_android_compose_version = "3.4.4"
 val room_version = "2.5.2"
-val color_picker_version = "1.0.4"
-val ksp_version = "2.2.0-1.0.20"
+val color_picker_version = "1.0.8" // Updated to a more recent version as 1.0.4 seems old
 
 dependencies {
 
@@ -70,9 +68,11 @@ dependencies {
     implementation("io.insert-koin:koin-androidx-compose:${koin_android_compose_version}")
     // Room
     implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
+    //ksp("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
-    ksp("androidx.room:room-compiler:$room_version")
+
+
+
 
     // Color Picker
     implementation("com.github.skydoves:colorpicker-compose:$color_picker_version")
