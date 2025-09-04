@@ -1,6 +1,7 @@
 package com.fire.notes_app.screens
 
 
+import android.provider.ContactsContract
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -12,17 +13,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.fire.notes_app.R
 
-data class Note(
+data class NoteModel(
     val title: String,
     val description: String
 )
-@Preview(showBackground = true)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    viewModel: HomeViewModel = viewModel()
+) {
     val notesList = List(7) {
-        Note(
+        NoteModel(
             title = "Test 2 - 1234",
             description = "another day"
         )
@@ -58,7 +61,7 @@ fun HomeScreen() {
 }
 
 @Composable
-fun NoteCard(note: Note) {
+fun NoteCard(note: NoteModel) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
