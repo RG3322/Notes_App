@@ -44,7 +44,11 @@ fun HomeScreen(
                 )
             }
         }
-    ) { paddingValues ->
+    )
+
+
+
+    { paddingValues ->
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
