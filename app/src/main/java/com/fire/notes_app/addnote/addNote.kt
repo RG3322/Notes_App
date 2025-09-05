@@ -107,6 +107,10 @@ fun AddNote() {
         // Content TextField
         TextField(
             value = content,
+
+
+
+
             onValueChange = { content = it },
             modifier = Modifier.fillMaxWidth()
                 .weight(1f) // Takes remaining space
