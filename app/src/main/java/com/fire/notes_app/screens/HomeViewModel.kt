@@ -13,6 +13,8 @@ class HomeViewModel : ViewModel()
 
 
 
+
+
     private val _notes = ArrayList<NoteModel>()
     val notes =_notes.toList()
 
